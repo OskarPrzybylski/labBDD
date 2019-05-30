@@ -1,6 +1,8 @@
 package edu.iis.mto.bdd.trains.model;
 
+import java.util.ArrayList;
 import java.util.Arrays;
+import java.util.Collections;
 import java.util.List;
 
 import com.google.common.collect.ImmutableList;
@@ -9,7 +11,7 @@ public class Line {
 
     private final String line;
     private final String departingFrom;
-    private final List<String> stations;
+    private final ArrayList<String> stations;
 
     private Line(String line, String departingFrom) {
         this.line = line;
@@ -20,7 +22,7 @@ public class Line {
     private Line(String line, String departingFrom, List<String> stations) {
         this.line = line;
         this.departingFrom = departingFrom;
-        this.stations = stations;
+        this.stations = new ArrayList<String>(stations);
     }
 
     public String getDepartingFrom() {

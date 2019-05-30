@@ -18,7 +18,7 @@ public class EstimationOfTheArrivalTime {
 
     }
     @I("^następny pociąg odjeżdża o (.*) na linii \"([^\"]*)\"$")
-    public void andNextTrain(@Transform(JodaLocalTimeConverter.class) LocalTime startTime, String line) {
+    public void andNextTrainLeaveTimeAndLine(@Transform(JodaLocalTimeConverter.class) LocalTime leaveTime, String line) {
         throw new PendingException();
     }
     @Gdy("^zapytam o godzinę przyjazdu$")
@@ -27,7 +27,7 @@ public class EstimationOfTheArrivalTime {
     }
 
     @Wtedy("^powinienem uzyskać następujący szacowany czas przyjazdu: (.*)$")
-    public void shouldBeInformedAbout(@Transform(JodaLocalTimeConverter.class) LocalTime startTime) {
+    public void shouldIBeInformedAboutArrivalTimeOfThisTrain(@Transform(JodaLocalTimeConverter.class) LocalTime arrivalTime) {
         throw new PendingException();
     }
 }
